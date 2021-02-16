@@ -32,7 +32,7 @@ Dependencies rough list:
    #curl http://localhost:80/api/users/age/20
 
    4. Count everage user age by Author (input Author Id which is 1 - 5
-   #curl http://localhost:80/api/users/5
+   #curl http://localhost:80/api/users/author/1
 
    5. Distinct user names with bookslist over 2 item
    #curl http://localhost:80/api/users/distinctUsers
