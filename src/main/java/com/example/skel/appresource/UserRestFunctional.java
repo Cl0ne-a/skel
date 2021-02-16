@@ -36,8 +36,8 @@ public class UserRestFunctional {
         return this.userService.distinctByNameWithBookList();
     }
 
-    //Does not function with error 500
-    @GetMapping("/{authorId}")
+   
+    @GetMapping("/author/{authorId}")
     public int userEverageAge(@PathVariable("authorId") int authorId) {
         return this.userService.userAge(authorId);
     }
