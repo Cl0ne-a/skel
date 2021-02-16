@@ -1,4 +1,4 @@
-package com.example.skel.appresource;
+package com.example.skel.appresource.additionalRestFunctionality;
 
 import com.example.skel.domain.Books;
 import com.example.skel.domain.User;
@@ -7,25 +7,25 @@ import com.example.skel.services.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
 @CrossOrigin
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api/books")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class BooksRestFunctional {
 
-    BooksService booksService;
+    private final BooksService booksService;
 
-    @GetMapping("/")
+    @GetMapping
     public List <Books> findAll(){
         return this.booksService.findAll();
     }
 
+    @GetMapping("/{bookId}")
+    public Books findBookById(@PathVariable("bookId") int id){
+        return this.booksService.foundById(id);}
 }

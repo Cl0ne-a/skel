@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Component
-@RequiredArgsConstructor(onConstructor = @_(@Autowired))
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class EnvironmentUtilsImpl implements EnvironmentUtils {
     private static final String PROFILE_DEVELOPMENT = "dev";
     private static final String PROFILE_PRODUCTION = "prod";
